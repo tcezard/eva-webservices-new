@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: eva-webservices-new-stage
+resources:
+- namespace.yaml
+- ../../base
+patches:
+- path: deployment-patch.yaml
+- path: ingress-patch.yaml
+images:
+- name: dockerhub.ebi.ac.uk/ebivariation/eva-webservices-new
+  # FIXME: ebivariation/eva-webservices-new doesn't exist as its own repository in the registry. Borrowing the ebivariation/eva-seqcol repository as scratch space for manual testing
+  newName: dockerhub.ebi.ac.uk/ebivariation/eva-seqcol
+  newTag: eva-webservices-new-manual-20260718-1426   # bump manually after each `docker push`
+secretGenerator:
+- name: eva-webservices-new-config
+  files:
+  - application.properties

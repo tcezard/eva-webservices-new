@@ -34,3 +34,7 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Kubernetes overlay secrets
+k8s-manifests/overlays/*/application.properties
+!k8s-manifests/overlays/local/application.properties
