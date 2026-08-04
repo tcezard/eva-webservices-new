@@ -11,7 +11,7 @@ images:
 - name: dockerhub.ebi.ac.uk/ebivariation/eva-webservices-new
   # FIXME: ebivariation/eva-webservices-new doesn't exist as its own repository in the registry. Borrowing the ebivariation/eva-seqcol repository as scratch space for manual testing
   newName: dockerhub.ebi.ac.uk/ebivariation/eva-seqcol
-  newTag: eva-webservices-new-manual-20260718-1426   # bump manually after each `docker push`
+  newTag: eva-webservices-new-manual-20260804-2316   # bump manually after each `docker push`
 secretGenerator:
 - name: eva-webservices-new-config
   files:
